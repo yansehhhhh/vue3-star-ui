@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 const routes = [{
         path: "/",
-        redirect: "/input",
+        redirect: "/install",
     },
     {
         path: "/home",
@@ -12,6 +12,14 @@ const routes = [{
             title: "输入框",
         },
         children: [{
+            path: "/install",
+            name: "install",
+            component: () =>
+                import ("@/views/install.vue"),
+            meta: {
+                title: "输入框",
+            },
+        }, {
             path: "/input",
             name: "input",
             component: () =>
@@ -19,7 +27,7 @@ const routes = [{
             meta: {
                 title: "输入框",
             },
-        }, ]
+        }]
     },
 ];
 
